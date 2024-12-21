@@ -1,0 +1,113 @@
+.dashboard-container {
+    /* background: url("https://img.freepik.com/free-psd/healthcare-prevention-banner-square-flyer-with-doctor-theme-social-media-post-template_84443-1082.jpg?semt=ais_hybrid") no-repeat center center/cover; */
+    /* max-width: 800px; */
+    width: 80%;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard-container {
+    max-width: 1200px;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px auto;
+  }
+  
+  
+  .menu-item {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .menu-item:hover {
+    background-color: #0056b3;
+  }
+  
+  .logout-button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #a71d2a;
+  }
+  
+  
+ 
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .header {
+    text-align: left;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .header p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  
+  .actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .logout-button {
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .logout-button:hover {
+    background-color: #a71d2a;
+  }
+  

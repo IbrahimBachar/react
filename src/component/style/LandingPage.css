@@ -1,0 +1,98 @@
+/* Base styles */
+.landing {
+    background: url("https://img.freepik.com/free-photo/smiling-doctor-with-strethoscope-isolated-grey_651396-974.jpg?semt=ais_hybrid")
+      no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Overlay */
+  .overlay {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Language switcher container */
+  .language-switcher-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 3;
+  }
+  
+  /* Content styles */
+  .content {
+    color: white;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: moveText 15s linear infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #00bcd4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  .moving-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: blue;
+    text-shadow: 1px 1px 3px rgba(104, 62, 62, 0.8);
+  }
+  
+  @keyframes moveText {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Button styles */
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    background: #00bcd4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  .btn:hover {
+    background: #0288d1;
+  }
+  

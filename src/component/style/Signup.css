@@ -1,0 +1,86 @@
+.signup-container {
+    background: url("https://img.freepik.com/free-psd/healthcare-prevention-banner-square-flyer-with-doctor-theme-social-media-post-template_84443-1082.jpg?semt=ais_hybrid") no-repeat center center/cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .form-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background: #f9f9f9;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0.5rem;
+    background: transparent;
+  }
+  
+  .input-group .icon {
+    margin-right: 0.5rem;
+    color: #666;
+  }
+  
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
+  
+  .btn {
+    background: #00bcd4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background: #0288d1;
+  }
+  
+  p {
+    margin-top: 1rem;
+    color: #555;
+  }
+  
+  a {
+    color: #0288d1;
+    text-decoration: none;
+  }
+  
