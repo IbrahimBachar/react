@@ -2,6 +2,7 @@
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  background: linear-gradient(#bd7c7c, #9198e5);
 }
 
 h2 {
@@ -27,8 +28,8 @@ h2 {
 
 .logout-button {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  right: 0;
   background-color: red;
   color: white;
   border: none;

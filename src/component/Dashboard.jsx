@@ -70,11 +70,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./style/Dashboard.css";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
   const { currentUser, signOut } = useAuth();
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -101,11 +103,11 @@ const Dashboard = () => {
         return (
           <>
             <MenuItem
-              label="Manage Users"
+              label={t("manage_users")}
               onClick={() => navigate("/admin/users")}
             />
             <MenuItem
-              label="Register new User"
+              label={t("register_user")}
               onClick={() => navigate("/admin/add-user-form")}
             />
           </>
@@ -114,15 +116,15 @@ const Dashboard = () => {
         return (
           <>
             <MenuItem
-              label="View Appointments"
+              label={t("view_appointment")}
               onClick={() => navigate("/DoctorDashboard")}
             />
             <MenuItem
-              label="Patient List"
+              label={t("patient_list")}
               onClick={() => navigate("/doctor/patients")}
             />
             <MenuItem
-              label="Add Notes"
+              label={t("add_notes")}
               onClick={() => navigate("/doctor/notes")}
             />
           </>
@@ -152,7 +154,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="header">
-        <h1>Welcome, {currentUser.fullName}!</h1>
+        <h1>{t("welcome1")}, {currentUser.fullName}!</h1>
         <p>Role: {currentUser.role}</p>
         {currentUser.profilePicture && (
           <img
@@ -164,7 +166,7 @@ const Dashboard = () => {
       </div>
       <div className="menu-container">{renderMenu()}</div>
       <button onClick={handleLogout} className="logout-button">
-        Logout
+        {t("logout")}
       </button>
     </div>
   );

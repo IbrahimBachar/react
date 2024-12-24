@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./style/EditUserForm.css"; // Import CSS for styling
+import { useTranslation } from "react-i18next";
 
 const EditUserForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [user, setUser] = useState({
     username: "",
     fullName: "",
@@ -39,10 +41,10 @@ const EditUserForm = () => {
 
   return (
     <div className="edit-user-container">
-      <h2>Edit User</h2>
+      <h2>{t("edit_user")}</h2>
       <form onSubmit={handleSubmit} className="edit-user-form">
         <label>
-          Username (Read-Only)
+          {t("username")} 
           <input
             type="text"
             name="username"
@@ -52,7 +54,7 @@ const EditUserForm = () => {
           />
         </label>
         <label>
-          Full Name
+          {t("full_name")}
           <input
             type="text"
             name="fullName"
@@ -62,7 +64,7 @@ const EditUserForm = () => {
           />
         </label>
         <label>
-          Email
+          {t("email")}
           <input
             type="email"
             name="email"
@@ -72,7 +74,7 @@ const EditUserForm = () => {
           />
         </label>
         <label>
-          Date of Birth
+          {t("dob")}
           <input
             type="date"
             name="dob"
@@ -83,7 +85,7 @@ const EditUserForm = () => {
         
         
         <label>
-          Phone Number
+          {t("telephone")}
           <input
             type="text"
             name="phoneNumber"
@@ -92,29 +94,29 @@ const EditUserForm = () => {
           />
         </label>
         <label>
-          Role
+          {t("role")}
           <select
             name="role"
             value={user.role}
             onChange={handleInputChange}
             required
           >
-            <option value="">Select Role</option>
-            <option value="Admin">Admin</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Patient">Patient</option>
+            <option disabled>{t("select")}</option>
+            <option value="Admin">{t("admin")}</option>
+            <option value="Doctor">{("doctor")}</option>
+            <option value="Patient">{t("patient")}</option>
           </select>
         </label>
         <div className="form-actions">
           <button type="submit" className="save-button">
-            Save Changes
+            {t("save_changes")}
           </button>
           <button
             type="button"
             className="cancel-button"
             onClick={() => navigate("/admin/users")}
           >
-            Cancel
+            {t("cancel")}
           </button>
         </div>
       </form>

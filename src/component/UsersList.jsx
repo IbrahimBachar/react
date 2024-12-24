@@ -246,6 +246,7 @@ import { useNavigate } from "react-router-dom";
 import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
 import { parse } from 'json2csv'; // Add this import for CSV conversion
 import "./style/UsersList.css";
+import { useTranslation } from "react-i18next";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -256,6 +257,7 @@ const UsersList = () => {
   const [deleteUser, setDeleteUser] = useState(null); // For confirmation modal
   const navigate = useNavigate();
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -349,12 +351,13 @@ const UsersList = () => {
     return (
       <div className="users-list-container">
         <button className="logout-button" onClick={handleLogout}>
-        Logout
+        {t("logout")}
       </button>
-        <h2>Manage Users</h2>
+        <h2>{t("manage_users")}</h2>
+        
         <input
         type="text"
-        placeholder="Search by Username or Full Name"
+        placeholder={t("search")}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input"
@@ -362,25 +365,27 @@ const UsersList = () => {
         {/* <button onClick={handleCreate} className="add-button">
           Add New User
         </button> */}
-        
+        <button onClick={openDownloadConfirmation} className="download-button">
+          {t("download_list")}
+        </button>
 
         {/* Your existing table code */}
         <table className="users-table">
           <thead>
                     <tr>
                       <th onClick={() => handleSort("username")}>
-                        Username {sortConfig.key === "username" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
+                        {t("username")} {sortConfig.key === "username" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
                       </th>
                       <th onClick={() => handleSort("fullName")}>
-                        Full Name {sortConfig.key === "fullName" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
+                        {t("full_name")} {sortConfig.key === "fullName" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
                       </th>
                       <th onClick={() => handleSort("email")}>
-                        Email {sortConfig.key === "email" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
+                        {t("email")} {sortConfig.key === "email" && (sortConfig.direction === "asc" ? <FaSortUp /> : <FaSortDown />)}
                       </th>
-                      <th>Date of Birth</th>
-                      <th>Phone Number</th>
-                      <th>Role</th>
-                      <th>Actions</th>
+                      <th>{t("dob")}</th>
+                      <th>{t("telephone")}</th>
+                      <th>{t("role")}</th>
+                      <th>{t("actions")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -394,13 +399,13 @@ const UsersList = () => {
                         <td>{user.role}</td>
                         <td>
                           <button onClick={() => handleEdit(user)} className="edit-button">
-                            Edit
+                            {t("edit")}
                           </button>
                           <button
                             onClick={() => openDeleteConfirmation(user.username)}
                             className="delete-button"
                           >
-                            Delete
+                            {t("delete")}
                           </button>
                         </td>
                       </tr>
@@ -415,38 +420,36 @@ const UsersList = () => {
           onClick={() => paginate(currentPage - 1)}
           disabled={isPrevDisabled}
         >
-          &lt; Previous
+          &lt; {t("previous")}
         </button>
         <span className="page-info">
-          Page {currentPage} of {totalPages}
+          {t("page")} {currentPage} {t("of")} {totalPages}
         </span>
         <button
           className={`pagination-button ${isNextDisabled ? 'disabled' : ''}`}
           onClick={() => paginate(currentPage + 1)}
           disabled={isNextDisabled}
         >
-          Next &gt;
+          {t("next")} &gt;
         </button>
         </div>
         
-        <button onClick={openDownloadConfirmation} className="download-button">
-          Download Users List
-        </button>
+        
 
         {/* Confirmation modals */}
       {showConfirmation && (
         <div className="confirmation-modal">
           <div className="confirmation-dialog">
-            <p>Are you sure you want to download the users list?</p>
+            <p>{t("download_confirmation")}</p>
             <div className="confirmation-actions">
               <button onClick={confirmDownload} className="confirm-button">
-                Yes
+                {t("yes")}
               </button>
               <button
                 onClick={closeDownloadConfirmation}
                 className="cancel-button"
               >
-                No
+                {t("no")}            
               </button>
             </div>
           </div>
@@ -458,19 +461,19 @@ const UsersList = () => {
       {deleteUser && (
         <div className="confirmation-modal">
           <div className="confirmation-dialog">
-            <p>Are you sure you want to delete this user?</p>
+            <p>{t("delete_confirmation")}</p>
             <div className="confirmation-actions">
               <button
                 onClick={() => handleDelete(deleteUser)}
                 className="confirm-delete-button"
               >
-                Yes
+                {t("yes")}
               </button>
               <button
                 onClick={closeDeleteConfirmation}
                 className="cancel-delete-button"
               >
-                No
+                {t("no")}
               </button>
             </div>
           </div>

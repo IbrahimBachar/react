@@ -280,6 +280,7 @@ const AddUserForm = () => {
             value={form.role}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
           >
+            <option value="" disabled>{t("select")}</option>
             <option value="admin">{t("admin")}</option>
             <option value="doctor">{t("doctor")}</option>
             <option value="patient">{t("patient")}</option>
@@ -289,7 +290,7 @@ const AddUserForm = () => {
           </button>
 
            <button type="button" onClick={handleCancel} className="cancel-button">
-             Cancel
+             {t("cancel")}
            </button>
         </form>
         {/* <p>
