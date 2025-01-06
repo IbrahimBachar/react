@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Project Description
+## Technical Description
+**This project is a multi-role clinic management system that integrates a ReactJS front-end with a Spring Boot back-end. 
+The system provides user authentication (signup and login) and role-based access, enabling functionalities for Admin, Doctor, and Patient.**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **Frontend:**
+**Built with ReactJS for dynamic user experiences.
+Role-specific dashboards with CRUD operations for managing clinic-related tasks.
+User-friendly forms for signup and login.**
 
-## Available Scripts
+## **Backend:**
+**Developed with Spring Boot for secure and scalable operations.
+Uses PostgreSQL for database management.
+Implements RESTful APIs for seamless communication with the frontend.
+Role-based authentication and authorization.**
 
-In the project directory, you can run:
+## Security:
+**Passwords hashed before storing in the database using BCrypt library.
+CORS policies to allow secure communication between frontend and backend.**
 
-### `npm start`
+## Business Description
+**This system aims to digitize clinic operations, improving efficiency and user satisfaction by:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Admins:
+**Managing doctors, patients, and appointment schedules.
+Tracking clinic operations through a centralized dashboard**.
+## Doctors:
+**Viewing appointments and managing patient records.
+Documenting diagnosis and treatment plans.**
+## Patients:
+**Booking appointments**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**The platform enhances operational efficiency, reduces paperwork, and provides a better experience for all stakeholders.**
 
-### `npm test`
+## Guidance on Signing Up and Signing In
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Signup Workflow
+**The form collects the following details:
+Full Name
+Username
+Email
+Date of Birth
+Phone Number
+Role (Admin, Doctor, Patient)
+Password and Confirm Password.**
 
-### `npm run build`
+### Fill in the Form:
+**Enter accurate details in the form fields. Ensure:
+The email is valid.
+Password and confirm password match.**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Submit the Form:
+**Click the "Sign Up" button to register.
+The form sends a POST request to the backend endpoint /api/register.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend Processing:
+**Backend validates the input.
+On successful registration, the user details are stored in the database.
+A success message is displayed, and the user may be redirected to the login page.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Possible Errors:
+**Duplicate email or username: “Email/Username already exists.”
+Invalid password format: "Password must contain X characters."
+Login Workflow**
 
-### `npm run eject`
+### Access the Login Page:
+**Navigate to the login page (/login route).
+The form collects:
+Username or Email
+Password.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Fill in the Login Details:
+**Fill the login Form:
+Click the "Login" button to authenticate.
+A POST request is sent to the backend endpoint /api/login.**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend Authentication:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Backend verifies the credentials.
+If valid:
+The user is redirected to the appropriate dashboard (/dashboard/admin, /dashboard/doctor, or /dashboard/patient) based on their role.
+If invalid:
+An error message is displayed: “Invalid username or password.”**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Role-Specific Dashboards:
+**Admin**: Manage users, schedules, and clinic operations.
+**Doctor**: View appointments and patient details.
+**Patient**: Book appointments.
